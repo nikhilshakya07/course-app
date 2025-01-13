@@ -1,24 +1,24 @@
-const {Router} = require("express");
-const UserRouter = Router();
+const { Router } = require("express");
+const userRouter = Router();
 
-UserRouter.post("/signup", function(req,res){
+userRouter.post("/signup", function(req,res){
     res.json({
         Message : "signup Endpoint"
     })
 })
 
-UserRouter.post("/signin", function(req,res){
+userRouter.post("/signin", function(req,res){
     res.json({
-        Message : "signin Endpoint"
+        message : "signin Endpoint"
     })
 })
 
-UserRouter.get("/mycourses", function(req,res){
+userRouter.get("/mycourses", function(req,res){
     res.json({
-        Message : "mycourses Endpoint"
+        message : "mycourses Endpoint"
     })
 })
 
 module.exports = {
-    UserRouter : UserRouter
+    userRouter: userRouter
 }
