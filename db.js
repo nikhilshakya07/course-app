@@ -6,15 +6,14 @@ const ObjectId = Schema.ObjectId;
 const userSchema = new Schema({
     email : String,
     password : String,
-    firstName : String,
+    firstname : String,
     lastname : String,
-    _id : ObjectId
 });
 
 const adminSchema = new Schema({
     email : String,
     password : String,
-    firstName : String,
+    firstname : String,
     lastname : String,
     _id : ObjectId
 });
