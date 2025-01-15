@@ -22,13 +22,12 @@ const courseSchema = new Schema({
     description : String,
     price : Number,
     imageUrl : String,
-    CreatorId : ObjectId,
+    CreatorId : ObjectId
 });
 
 const purchaseSchema = new Schema({
     courseId : ObjectId,
-    userId : ObjectId,
-    _id : ObjectId
+    userId : ObjectId
 });
 
 

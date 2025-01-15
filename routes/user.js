@@ -1,8 +1,9 @@
 const { Router } = require("express");
 const bcrypt = require("bcrypt");
 const { z } = require("zod");
-const { userModel } = require("../db");
+const { userModel, purchaseModel } = require("../db");
 const jwt = require("jsonwebtoken");
+const { userMiddleware } = require("../middleware/user");
 require("dotenv").config();
 const JWT_USER_PASSWORD = process.env.JWT_USER_PASSWORD;
 
@@ -84,9 +85,14 @@ userRouter.post("/signin", async function(req,res){
     
 });
 
-userRouter.get("/mycourses", function(req,res){
+userRouter.get("/mycourses",userMiddleware,async function(req,res){
+    const userId = req.userId;
+
+    const mycourses = await purchaseModel.find({
+        userId
+    })
     res.json({
-        message : "mycourses Endpoint"
+        mycourses
     })
 })
 
