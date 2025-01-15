@@ -15,16 +15,14 @@ const adminSchema = new Schema({
     password : String,
     firstname : String,
     lastname : String,
-    _id : ObjectId
 });
 
 const courseSchema = new Schema({
     title : String,
-    desciption : String,
+    description : String,
     price : Number,
     imageUrl : String,
     CreatorId : ObjectId,
-    _id : ObjectId
 });
 
 const purchaseSchema = new Schema({
